@@ -1,6 +1,13 @@
+import java.util.Arraylist;
+
 public class PhonebookApp  {
 
-public static void main(String... args)  {
+public static void main(String
+
+ArrayList<String> Contacts = new ArrayList<String>();
+
+ArrayList<String> PhoneNumber = new ArrayList<String>();
+
 
 String prompt = """
 1. Add Contact
@@ -11,15 +18,59 @@ String prompt = """
 6. Edit Contact
 """;
 
+String 
+
 System.out.println(prompt);
 
 switch(userInput) {
-Case 1 ->
-Case 2 ->
-Case 3 ->
+Case 1 -> System.out.println("Add contacts");
+            String contact = input.next();
+
+	  
+Contacts.add(contact);
+
+
+Case 2 -> System.out.println("Remove Contacts");
+	    String remove = input.next();
+
+removeContact();
+
+
+
+PhoneNumber.add()
+
+
+	   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Case 3 -> 
 Case 4 ->
 Case 5 ->
-Case 6 ->
+Case 6 -> editContact();
 
-public static String[] addContact(
 
+
+
+
+
+
+
+
+
+
+
+}
+
+}
