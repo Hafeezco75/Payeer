@@ -4,14 +4,17 @@ import java.util.Scanner;
 
 public class PhonebookApp  {
 
+static ArrayList<String> contacts = new ArrayList<String>();
+
+static ArrayList<String> FirstName = new ArrayList<String>();
+
+static ArrayList<String> LastName = new ArrayList<String>();
+
+static ArrayList<String> phoneNumber = new ArrayList<String>();
+
 public static void main(String... args)  {
 
 Scanner input = new Scanner(System.in);
-
-ArrayList<String> contacts = new ArrayList<String>();
-
-ArrayList<String> phoneNumber = new ArrayList<String>();
-
 
 String prompt = """
 1-> Add Contact
@@ -22,41 +25,49 @@ String prompt = """
 6-> Edit Contact
 """;
 
-System.out.println("" + prompt);
+System.out.println(prompt);
 int userInput = input.nextInt(); 
 
 switch(userInput) {
-case 1: addContact();
+case 1-> addContact();
+
+
+}
+
+}
 
 public static void addContact()  {
+
+Scanner input = new Scanner(System.in);
 
 System.out.println("Add contacts");
   String Contact = input.nextLine();
 
 contacts.add(Contact);
 
-if 
+System.out.println("Enter your Firstname");
+  String firstName = input.nextLine();
+
+FirstName.add(firstName);
+
+System.out.println("Enter your Lastname");
+  String lastName = input.nextLine();
+
+LastName.add(lastName);
+
+
+String name = firstName.concat(lastName);
+
+ }
+
+public static void removeContact()  {
+
+System.out.println("Remove contact");
+  String Contact = input.nextLine();
 
 
 
 
 
-int name = s.indexOf(' ');
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-}
 
 }
