@@ -1,66 +1,52 @@
-import java.util.Arraylist;
+import java.util.ArrayList;
+
+import java.util.Scanner;
 
 public class PhonebookApp  {
 
-public static void main(String
+public static void main(String... args)  {
 
-ArrayList<String> Contacts = new ArrayList<String>();
+Scanner input = new Scanner(System.in);
 
-ArrayList<String> PhoneNumber = new ArrayList<String>();
+ArrayList<String> contacts = new ArrayList<String>();
+
+ArrayList<String> phoneNumber = new ArrayList<String>();
 
 
 String prompt = """
-1. Add Contact
-2. Remove Contact
-3. Find Contact by Phone Number
-4. Find Contact by Firstname
-5. Find Contact by lastname
-6. Edit Contact
+1-> Add Contact
+2-> Remove Contact
+3-> Find Contact by Phone Number
+4-> Find Contact by Firstname
+5-> Find Contact by lastname
+6-> Edit Contact
 """;
 
-String 
-
-System.out.println(prompt);
+System.out.println("" + prompt);
+int userInput = input.nextInt(); 
 
 switch(userInput) {
-Case 1 -> System.out.println("Add contacts");
-            String contact = input.next();
+case 1: addContact();
 
-	  
-Contacts.add(contact);
+public static void addContact()  {
 
+System.out.println("Add contacts");
+  String Contact = input.nextLine();
 
-Case 2 -> System.out.println("Remove Contacts");
-	    String remove = input.next();
+contacts.add(Contact);
 
-removeContact();
-
-
-
-PhoneNumber.add()
-
-
-	   
+if 
 
 
 
 
 
+int name = s.indexOf(' ');
 
 
 
 
-
-
-
-
-
-Case 3 -> 
-Case 4 ->
-Case 5 ->
-Case 6 -> editContact();
-
-
+  
 
 
 
