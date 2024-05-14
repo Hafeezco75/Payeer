@@ -10,7 +10,7 @@ static ArrayList<String> FirstName = new ArrayList<String>();
 
 static ArrayList<String> LastName = new ArrayList<String>();
 
-static ArrayList<String> phoneNumber = new ArrayList<String>();
+static ArrayList<String> PhoneNumber = new ArrayList<String>();
 
 public static void main(String... args)  {
 
@@ -30,6 +30,8 @@ int userInput = input.nextInt();
 
 switch(userInput) {
 case 1-> addContact();
+case 2-> removeContact();
+case 3-> findContactByPhoneNumber();
 
 
 }
@@ -39,11 +41,6 @@ case 1-> addContact();
 public static void addContact()  {
 
 Scanner input = new Scanner(System.in);
-
-System.out.println("Add contacts");
-  String Contact = input.nextLine();
-
-contacts.add(Contact);
 
 System.out.println("Enter your Firstname");
   String firstName = input.nextLine();
@@ -55,17 +52,54 @@ System.out.println("Enter your Lastname");
 
 LastName.add(lastName);
 
+System.out.println("Enter your Phone Number");
+  String phoneNumber = input.next();
+
+PhoneNumber.add(phoneNumber);
 
 String name = firstName.concat(lastName);
 
- }
+}
 
 public static void removeContact()  {
 
+String phoneNumber = null;
+
+Scanner input = new Scanner(System.in);
+
 System.out.println("Remove contact");
-  String Contact = input.nextLine();
+  String Contacts = input.nextLine();
 
+for(int count = 0; count < contacts.size(); count++) {
+    if(contacts.get(count).equalsIgnoreCase(phoneNumber))  {
+         contacts.remove(Contacts);
+     }
+  else {
+   System.out.println("Contact does not exist");
+    }
+  }
 
+}
+
+public static void findContactByPhoneNumber()  {
+
+String phoneNumber = null;
+
+Scanner input = new Scanner(System.in);
+
+System.out.println("Search for contact");
+  String search = input.nextLine();
+
+for(int count = 0; count < contacts.size(); count++)  {
+  if(contacts.get(count).equalsIgnoreCase(phoneNumber))  {
+	contacts.get(1);
+    }
+ else {
+  System.out.println("Contacts cannot be found");
+    }
+  }
+
+}
 
 
 
