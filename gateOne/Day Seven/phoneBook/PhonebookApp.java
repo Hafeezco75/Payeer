@@ -10,7 +10,7 @@ static ArrayList<String> FirstName = new ArrayList<String>();
 
 static ArrayList<String> LastName = new ArrayList<String>();
 
-static ArrayList<String> phoneNumber = new ArrayList<String>();
+static ArrayList<String> PhoneNumber = new ArrayList<String>();
 
 public static void main(String... args)  {
    phonebookMenu();
@@ -27,6 +27,7 @@ String prompt = """
 4-> Find Contact by Firstname
 5-> Find Contact by lastname
 6-> Edit Contact
+7-> Back
 """;
 
 System.out.println(prompt);
@@ -36,7 +37,7 @@ switch(userInput) {
 case 1-> addContact();
 case 2-> removeContact();
 case 3-> findContactByPhoneNumber();
-
+case 7-> phonebookMenu();
 
 }
 
@@ -61,13 +62,26 @@ System.out.println("Enter your Phone Number");
 
 PhoneNumber.add(phoneNumber);
 
-String name = firstName.concat(lastName);
-
+addAnotherContact();
 }
 
-static void removeContact()  {
+public static void addAnotherContact()  {
 
-String phoneNumber = null;
+Scanner input = new Scanner(System.in);
+
+System.out.println("Do you still want to add another Contact(Yes/No)");
+     String newContacts = input.next();
+
+if(newContacts.equalsIgnoreCase("Yes")) {
+      addContact();
+ }
+else {
+ System.out.println("Contacts added Successfully>>>>>>>>");
+ phonebookMenu();
+  }
+
+}
+public static void removeContact()  {
 
 String firstname = " ";
 String lastname = " ";
@@ -75,38 +89,45 @@ String phoneContact = " ";
 
 Scanner input = new Scanner(System.in);
 
-System.out.println("Remove contact");
-  String Contacts = input.nextLine();
+System.out.println("Remove Lastname of contact");
+   String lastnames = input.nextLine();
 
-if(FirstName.isEmpty(firstName))  {
-   System.out.println("Contacts not found");
+for(int count = 0; count < LastName.size(); count++) {
+ if(LastName.get(count).equals(lastnames)) {
+    System.out.println(FirstName.get(count));
+  }
+ }
+phonebookMenu();
+    
+}
+public static void findContactByPhoneNumber()  {
+
+String firstname = " ";
+String lastname = " ";
+String phoneContact = " ";
+
+String phoneNumber = null;
+
+Scanner input = new Scanner(System.in);
+
+System.out.println("Search for Phone Number");
+  String searchNumber = input.nextLine();
+
+if(FirstName.isEmpty())  {
+   System.out.println("Contact not found");
  }
 if(LastName.isEmpty())  {
   System.out.println("Name not found");
   }
-if(phoneNumber.isEmpty())  {
- System.out.println("Phonenumber does not exist");
+if(PhoneNumber.isEmpty())  {
+ System.out.println("Phonenumber not found");
   }
-if(phoneNumber.contains(phoneNumber))  {
- System.out.println("phoneNumber found");
- }
 if(FirstName.contains(firstname))  {
   System.out.println("firstname found"); 
  }
 if(LastName.contains(lastname))  {
   System.out.println("lastName found");
  }
-
-}
-
-public static void findContactByPhoneNumber()  {
-
-String phoneNumber = null;
-
-Scanner input = new Scanner(System.in);
-
-System.out.println("Search for contact");
-  String searchNumber = input.nextLine();
 
 for(int count = 0; count < contacts.size(); count++)  {
 
@@ -122,7 +143,7 @@ if(!contacts.get(count).equals(searchNumber))  {
 
 }
 
-
-
-
 }
+
+
+
