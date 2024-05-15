@@ -21,6 +21,9 @@ public static void phonebookMenu()  {
 Scanner input = new Scanner(System.in);
 
 String prompt = """
+======================================================================
+Welcome to Semicolon Phonebook App,Enter any of the Options to perform.
+
 1-> Add Contact
 2-> Remove Contact
 3-> Find Contact by Phone Number
@@ -28,6 +31,8 @@ String prompt = """
 5-> Find Contact by lastname
 6-> Edit Contact
 7-> Back
+
+=========================================
 """;
 
 System.out.println(prompt);
@@ -37,6 +42,8 @@ switch(userInput) {
 case 1-> addContact();
 case 2-> removeContact();
 case 3-> findContactByPhoneNumber();
+case 4-> findContactByFirstname();
+case 5-> findContactByLastname();
 case 7-> phonebookMenu();
 
 }
@@ -76,7 +83,7 @@ if(newContacts.equalsIgnoreCase("Yes")) {
       addContact();
  }
 else {
- System.out.println("Contacts added Successfully>>>>>>>>");
+ System.out.println("Contacts added Successfully>>>>>>>>>>>>>");
  phonebookMenu();
   }
 
@@ -97,6 +104,7 @@ lastname = LastName.get(count);
  if(lastname.equals(lastName)) {
    LastName.remove(lastname);
   System.out.println(LastName);
+System.out.println("Contact LastName deleted Successsfully >>>>>>>>>>");
   }
 
 System.out.println("Remove Firstname of contact");
@@ -106,7 +114,18 @@ System.out.println("Remove Firstname of contact");
  if(firstname.equals(firstName))  {
   FirstName.remove(firstname);
   System.out.println(FirstName);
+System.out.println("Contact FirstName deleted Successfully >>>>>>>>>>>");
    }
+
+System.out.println("Remove Contact PhoneNumber");
+   String removeNumber = input.nextLine();
+
+phoneContact = PhoneNumber.get(count);
+ if(phoneContact.equals(firstName))  {
+  FirstName.remove(firstname);
+  System.out.println(FirstName);
+
+
  }
 phonebookMenu();
     
@@ -127,7 +146,7 @@ phoneContact = PhoneNumber.get(count);
 
  if(phoneContact.equals(searchNumber))  {
    PhoneNumber.indexOf(phoneContact);
-  System.out.println(phoneContact);
+  System.out.println(phoneContact + " exists");
    }
 
  if(!"phoneContact".equals(searchNumber))  {
@@ -136,6 +155,64 @@ phoneContact = PhoneNumber.get(count);
     }
   }
 
+phonebookMenu();
+}
+
+public static void findContactByFirstname() {
+
+Scanner input = new Scanner(System.in);
+
+String firstName = "";
+
+System.out.println("Search the Firstname of the Contact");
+     String Name = input.nextLine();
+   
+ for(int count = 0; count < FirstName.size(); count++) {
+     firstName = FirstName.get(count);
+
+  if(firstName.equals(Name))  {
+   FirstName.indexOf(firstName);
+  System.out.println(firstName + " exists");
+   }
+ 
+else if(!"firstName".equals(Name))  {
+  FirstName.indexOf(firstName);
+ System.out.println("FirstName not found");
+   }
+  }  
+   
+ } 
+  
+public static void findContactByLastname() {
+
+Scanner input = new Scanner(System.in);
+
+String lastName = "";
+
+System.out.println("Search the Lastname of the Contact");
+    String lastnames = input.nextLine();
+
+for(int count = 0; count < LastName.size(); count++) {
+   lastName = LastName.get(count);
+
+  if(lastName.equals(lastnames)) {
+  LastName.indexOf(lastName);
+ System.out.println(lastName + " exists");
+  }
+
+ else if (!"lastName".equals(lastnames)) {
+  LastName.indexOf(lastName);
+  System.out.println("LastName not found");
+  }
+}
+
+}
+public static void editContact()  {
+
+Scanner input = new Scanner(System.in);
+
+System.out.println("Enter the Contact you want to Edit");
+    String editContact = input.next();
 }
 
 }
