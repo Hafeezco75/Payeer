@@ -41,7 +41,7 @@ System.out.println("Your estimated fertile window is " + fertile + " - " + after
 
 System.out.println("Your estimated ovulation date is " + after);
 
-System.out.println("Your safe period is " + );
+//System.out.println("Your safe period is " + );
 
 System.out.println("You are most likely to get pregnant if you have sex without birth control a few days before your ovulation date.");
 

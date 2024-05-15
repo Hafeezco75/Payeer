@@ -1,10 +1,10 @@
-cnsnt prompt = require("prompt-sync")();
+const prompt = require("prompt-sync")();
 
 console.log("=============================================")
 
 console.log("Welcome to Your EverInteractive Menstrual Cycle App")
 
-startDate = Number(prompt())("What is the Start date of your period"))
+startDate = Number(prompt()("What is the Start date of your period")
     
 LocalDate now = LocalDate.of(startDate)
 
