@@ -83,67 +83,64 @@ else {
 }
 public static void removeContact()  {
 
-String firstname = " ";
-String lastname = " ";
-String phoneContact = " ";
+String firstname = "";
+String lastname = "";
+String phoneContact = "";
 
 Scanner input = new Scanner(System.in);
 
 System.out.println("Remove Lastname of contact");
-   String lastnames = input.nextLine();
+   String lastName = input.nextLine();
 
 for(int count = 0; count < LastName.size(); count++) {
- if(LastName.get(count).equals(lastnames)) {
-    System.out.println(FirstName.get(count));
+lastname = LastName.get(count);
+ if(lastname.equals(lastName)) {
+   LastName.remove(lastname);
+  System.out.println(LastName);
   }
+
+System.out.println("Remove Firstname of contact");
+   String firstName = input.nextLine();
+
+   firstname = FirstName.get(count);
+ if(firstname.equals(firstName))  {
+  FirstName.remove(firstname);
+  System.out.println(FirstName);
+   }
  }
 phonebookMenu();
     
 }
+
 public static void findContactByPhoneNumber()  {
 
-String firstname = " ";
-String lastname = " ";
-String phoneContact = " ";
-
-String phoneNumber = null;
+String phoneContact = "";
 
 Scanner input = new Scanner(System.in);
 
 System.out.println("Search for Phone Number");
   String searchNumber = input.nextLine();
 
-if(FirstName.isEmpty())  {
-   System.out.println("Contact not found");
- }
-if(LastName.isEmpty())  {
-  System.out.println("Name not found");
-  }
-if(PhoneNumber.isEmpty())  {
- System.out.println("Phonenumber not found");
-  }
-if(FirstName.contains(firstname))  {
-  System.out.println("firstname found"); 
- }
-if(LastName.contains(lastname))  {
-  System.out.println("lastName found");
- }
+for(int count = 0; count < PhoneNumber.size(); count++)  {
 
-for(int count = 0; count < contacts.size(); count++)  {
+phoneContact = PhoneNumber.get(count);
 
- if(contacts.get(count).equals(searchNumber))  {
-   System.out.println(FirstName);
-   System.out.println(LastName);
-   System.out.println(phoneNumber);
-    }
-if(!contacts.get(count).equals(searchNumber))  {
-   System.out.println("Contact not found");
+ if(phoneContact.equals(searchNumber))  {
+   PhoneNumber.indexOf(phoneContact);
+  System.out.println(phoneContact);
    }
-}
+
+ if(!"phoneContact".equals(searchNumber))  {
+   PhoneNumber.indexOf(phoneContact);
+  System.out.println("Phone Number not found");
+    }
+  }
 
 }
 
 }
+
+
 
 
 
