@@ -101,31 +101,37 @@ System.out.println("Remove Lastname of contact");
 
 for(int count = 0; count < LastName.size(); count++) {
 lastname = LastName.get(count);
- if(lastname.equals(lastName)) {
+ if(lastname.equalsIgnoreCase(lastName)) {
    LastName.remove(lastname);
   System.out.println(LastName);
 System.out.println("Contact LastName deleted Successsfully >>>>>>>>>>");
   }
+ }
+
+for(int count = 0; count < FirstName.size(); count++) {
 
 System.out.println("Remove Firstname of contact");
    String firstName = input.nextLine();
 
    firstname = FirstName.get(count);
- if(firstname.equals(firstName))  {
+ if(firstname.equalsIgnoreCase(firstName))  {
   FirstName.remove(firstname);
   System.out.println(FirstName);
 System.out.println("Contact FirstName deleted Successfully >>>>>>>>>>>");
    }
+ }
+ 
+for(int count = 0; count < PhoneNumber.size(); count++) {
 
 System.out.println("Remove Contact PhoneNumber");
    String removeNumber = input.nextLine();
 
 phoneContact = PhoneNumber.get(count);
- if(phoneContact.equals(firstName))  {
-  FirstName.remove(firstname);
-  System.out.println(FirstName);
-
-
+ if(phoneContact.equals(removeNumber))  {
+  PhoneNumber.remove(phoneContact);
+  System.out.println(PhoneNumber);
+System.out.println("Contact PhoneNumber deleted Successfully >>>>>>>>>>>");
+  }
  }
 phonebookMenu();
     

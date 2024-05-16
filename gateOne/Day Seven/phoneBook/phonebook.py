@@ -1,14 +1,14 @@
 import num.py;
 
-List contacts = []
+contacts = []
 
-List FirstName = []
+FirstName = []
 
-List LastName = [] 
+LastName = [] 
 
-List PhoneNumber = []
+PhoneNumber = []
 
-String prompt = """
+prompt = """
 1-> Add Contact
 2-> Remove Contact
 3-> Find Contact by Phone Number
@@ -18,46 +18,47 @@ String prompt = """
 """;
 
 print(prompt);
-int userInput = input.nextInt(); 
+user_Input = input; 
 
-switch(userInput) {
-case 1-> addContact();
-case 2-> removeContact();
-case 3-> findContactByPhoneNumber();
+switch(userInput) 
+case 1: 
+	addContact()
+case 2: 
+	removeContact()
+case 3: 
+	findContactByPhoneNumber()
 
 
-}
 
-}
+
+
 
 def addContact():
 
-firstName = int(input("Enter your Firstname"))
+	firstName = int(input("Enter your Firstname"))
   
-FirstName.append(firstName);
+	FirstName.append(firstName)
 
-lastName = str(input("Enter your Lastname"))
+	lastName = str(input("Enter your Lastname"))
   
-LastName.append(lastName);
+	LastName.append(lastName)
 
-phoneNumber = str(input("Enter your Phone Number"))
+	phoneNumber = str(input("Enter your Phone Number"))
 
-PhoneNumber.append(phoneNumber);
+	PhoneNumber.append(phoneNumber)
 
-String name = firstName.concat(lastName);
 
-}
 
 def removeContact():
 
-String phoneNumber = null;
+	phoneNumber = null;
 
-Contacts = str(input("Remove contact"))
+	Contacts = str(input("Remove contact"))
   
-for count in range contacts.size(); 
+	for count in range contacts.size(); 
     
-	if(contacts.get(count).equalsIgnoreCase(phoneNumber)):
-        contacts.remove(Contacts);
+		if(contacts.get(count).equalsIgnoreCase(phoneNumber)):
+        	contacts.remove(Contacts)
 
   	else:
 
@@ -66,15 +67,15 @@ for count in range contacts.size();
 
 def findContactByPhoneNumber():
 
-String phoneNumber = null;
+	String phoneNumber = null;
 
-search = str(input("Search for contact"))
+	search = str(input("Search for contact"))
 
-for count in range(contacts.size()
+	for count in range(contacts.size()
 
-if(contacts.get(count).equalsIgnoreCase(phoneNumber)):
-	contacts.get(1)
-else:
+	if(contacts.get(count).equalsIgnoreCase(phoneNumber)):
+	contacts.get(count)
+	else:
 
 	print("Contacts cannot be found")
   
