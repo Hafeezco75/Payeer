@@ -1,12 +1,10 @@
 import num.py;
 
-contacts = []
+firstname = []
 
-FirstName = []
+lastname = [] 
 
-LastName = [] 
-
-PhoneNumber = []
+phonenumber = []
 
 prompt = """
 1-> Add Contact
@@ -17,67 +15,85 @@ prompt = """
 6-> Edit Contact
 """;
 
-print(prompt);
-user_Input = input; 
+print(prompt)
 
-switch(userInput) 
-case 1: 
-	addContact()
-case 2: 
-	removeContact()
-case 3: 
-	findContactByPhoneNumber()
+user_Input = int(input("Enter any of the available Options to select"))
 
+match(user_Input): 
+	case 1: addContact();
 
+	case 2: removeContact();
 
+	case 3: findContactByPhoneNumber();
 
+	case 4: findContactByFirstname();
 
 
 def addContact():
 
-	firstName = int(input("Enter your Firstname"))
+	name = int(input("Enter your Firstname"))
   
-	FirstName.append(firstName)
+	firstname.append(name)
 
-	lastName = str(input("Enter your Lastname"))
+	Lastnames = str(input("Enter your Lastname"))
   
-	LastName.append(lastName)
+	lastname.append(Lastnames)
 
-	phoneNumber = str(input("Enter your Phone Number"))
+	contact_number = str(input("Enter your Phone Number"))
 
-	PhoneNumber.append(phoneNumber)
-
+	phonenumber.append(contact_number)
 
 
 def removeContact():
 
-	phoneNumber = null;
-
-	Contacts = str(input("Remove contact"))
+	phone_number = str(input("Remove PhoneNumber"))
   
-	for count in range contacts.size(); 
+	for count in firstname: 
     
 		if(contacts.get(count).equalsIgnoreCase(phoneNumber)):
-        	contacts.remove(Contacts)
+        	
+			phonenumber.remove(count)
 
-  	else:
+	else:
 
-  	print("Contact does not exist")
+		print("Contact does not exist")
 
 
 def findContactByPhoneNumber():
 
-	String phoneNumber = null;
-
 	search = str(input("Search for contact"))
 
-	for count in range(contacts.size()
+	for count in phonenumber:
 
-	if(contacts.get(count).equalsIgnoreCase(phoneNumber)):
-	contacts.get(count)
+		if(contacts.get(count).equalsIgnoreCase(phoneNumber)):
+	
+			contacts.get(count)
+	
+		print("Contact exists")
+        
 	else:
 
-	print("Contacts cannot be found")
+		print("Contacts cannot be found")
+
+
+def findContactByFirstname():
+
+	searchName = str(input("Search the Firstname of the Contact"))
+
+	for count in firstname:
+
+		if(searchName.equals(firstname.get(count))):
+
+			firstname.indexOf(count)
+
+		print(firstname + " exists")
+
+	elif(!"searchName".equals(firstname.get(count))):
+
+  		firstname.indexOf(count)
+
+ 	print("Firstname not found")
+
   
 
 

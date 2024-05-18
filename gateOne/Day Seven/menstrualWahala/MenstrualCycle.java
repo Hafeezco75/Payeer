@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import java.time.temporal.ChronoUnit;
 
+import java.time.format.DateTimeformatter;
+
 public class MenstrualCycle {
 
 public static void main(String... args)  {
@@ -14,18 +16,23 @@ System.out.println("=====================================================");
 
 System.out.println("Welcome to Your EverInteractive Menstrual Cycle App");
 
-System.out.println("What is the Start date of your period,Enter in the format:(YYYY-MM-DD) ");
+LocalDate formatter =              
+
+System.out.println("What is the Start date of your period,Enter in the format:(dd-MM-yyyy) ");
     String startDate = input.next();
 
-int lengthToOvulation = 14;
+System.out.println("What is the average length of your menstrual cycle");
+   int length = input.nextInt();
+
+int ovulationTime = length / 2;
+
+LocalDate startDay = LocalDate.parse(startDate,formatter);
 
 int periodToFertility = 8;
 
 int lengthToSafePeriod = 19;
 
-LocalDate localDate = LocalDate.parse(startDate);
-
-LocalDate after = localDate.plusDays(lengthToOvulation);
+LocalDate ovulationLength = localDate.plusDays(ovulationTime);
 
 LocalDate fertile = localDate.plusDays(periodToFertility);
 
@@ -33,8 +40,6 @@ LocalDate safetime = localDate.plusDays(lengthToSafePeriod);
 
 long noOfDaysBetween = ChronoUnit.DAYS.between(localDate, after);
 
-System.out.println("What is the average length of your menstrual cycle");
-   int length = input.nextInt();
 
 LocalDate nextFlow = localDate.plusDays(length);
 
@@ -44,7 +49,7 @@ System.out.println("if your menstrual cycle is " + length + "\n");
 
 System.out.println("Your estimated fertile window is " + fertile + " to " + after + "\n");
 
-System.out.println("Your Estimated Ovulation date is " + after);
+System.out.println("Your Estimated Ovulation date is " + ovulationTime);
 
 System.out.println("Your Safe period is " + safetime);
 

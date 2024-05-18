@@ -100,9 +100,9 @@ if(contactNumber.equals(phonenumber.get(count)))  {
   firstname.remove(count);
   lastname.remove(count);
 
- System.out.println(phonenumber);
-   System.out.println(lastname);
-    System.out.println(firstname);
+ System.out.println(contactNumber);
+   System.out.println(firstname);
+    System.out.println(lastname);
 
 System.out.println("Contact PhoneNumber deleted Successfully >>>>>>>>>>>");
 
