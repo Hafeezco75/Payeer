@@ -4,13 +4,11 @@ import java.util.Scanner;
 
 public class PhonebookApp  {
 
-static ArrayList<String> contacts = new ArrayList<String>();
+static ArrayList<String> firstname = new ArrayList<String>();
 
-static ArrayList<String> FirstName = new ArrayList<String>();
+static ArrayList<String> lastname = new ArrayList<String>();
 
-static ArrayList<String> LastName = new ArrayList<String>();
-
-static ArrayList<String> PhoneNumber = new ArrayList<String>();
+static ArrayList<String> phonenumber = new ArrayList<String>();
 
 public static void main(String... args)  {
    phonebookMenu();
@@ -55,19 +53,19 @@ static void addContact()  {
 Scanner input = new Scanner(System.in);
 
 System.out.println("Enter your Firstname");
-  String firstName = input.nextLine();
+  String name = input.nextLine();
 
-FirstName.add(firstName);
+firstname.add(name);
 
 System.out.println("Enter your Lastname");
-  String lastName = input.nextLine();
+  String names = input.nextLine();
 
-LastName.add(lastName);
+lastname.add(names);
 
 System.out.println("Enter your Phone Number");
-  String phoneNumber = input.next();
+  String number = input.next();
 
-PhoneNumber.add(phoneNumber);
+phonenumber.add(number);
 
 addAnotherContact();
 }
@@ -90,74 +88,55 @@ else {
 }
 public static void removeContact()  {
 
-String firstname = "";
-String lastname = "";
-String phoneContact = "";
-
 Scanner input = new Scanner(System.in);
 
-System.out.println("Remove Lastname of contact");
-   String lastName = input.nextLine();
-
-for(int count = 0; count < LastName.size(); count++) {
-lastname = LastName.get(count);
- if(lastname.equalsIgnoreCase(lastName)) {
-   LastName.remove(lastname);
-  System.out.println(LastName);
-System.out.println("Contact LastName deleted Successsfully >>>>>>>>>>");
-  }
- }
-
-for(int count = 0; count < FirstName.size(); count++) {
-
-System.out.println("Remove Firstname of contact");
-   String firstName = input.nextLine();
-
-   firstname = FirstName.get(count);
- if(firstname.equalsIgnoreCase(firstName))  {
-  FirstName.remove(firstname);
-  System.out.println(FirstName);
-System.out.println("Contact FirstName deleted Successfully >>>>>>>>>>>");
-   }
- }
- 
-for(int count = 0; count < PhoneNumber.size(); count++) {
-
 System.out.println("Remove Contact PhoneNumber");
-   String removeNumber = input.nextLine();
+   String contactNumber = input.nextLine();
 
-phoneContact = PhoneNumber.get(count);
- if(phoneContact.equals(removeNumber))  {
-  PhoneNumber.remove(phoneContact);
-  System.out.println(PhoneNumber);
+for(int count = 0; count < phonenumber.size(); count++) {
+
+if(contactNumber.equals(phonenumber.get(count)))  {
+  phonenumber.remove(count);
+  firstname.remove(count);
+  lastname.remove(count);
+
+ System.out.println(phonenumber);
+   System.out.println(lastname);
+    System.out.println(firstname);
+
 System.out.println("Contact PhoneNumber deleted Successfully >>>>>>>>>>>");
-  }
+
+System.out.println("Contact FirstName deleted Successfully >>>>>>>>>>>");
+
+System.out.println("Contact LastName deleted Successsfully >>>>>>>>>>");
+ } 
+
+else {
+    System.out.println("Contact does not exist");  
+     }
  }
 phonebookMenu();
     
 }
 
-public static void findContactByPhoneNumber()  {
 
-String phoneContact = "";
+public static void findContactByPhoneNumber()  {
 
 Scanner input = new Scanner(System.in);
 
-System.out.println("Search for Phone Number");
-  String searchNumber = input.nextLine();
+   System.out.println("Search for Phone Number");
+   String searchNumber = input.nextLine();
 
-for(int count = 0; count < PhoneNumber.size(); count++)  {
+     for(int count = 0; count < phonenumber.size(); count++)  {
 
-phoneContact = PhoneNumber.get(count);
-
- if(phoneContact.equals(searchNumber))  {
-   PhoneNumber.indexOf(phoneContact);
-  System.out.println(phoneContact + " exists");
+	if(searchNumber.equals(phonenumber.get(count)))  {
+   	phonenumber.indexOf(count);
+  	System.out.println(phonenumber + " exists");
    }
 
- if(!"phoneContact".equals(searchNumber))  {
-   PhoneNumber.indexOf(phoneContact);
-  System.out.println("Phone Number not found");
+      if(!"searchNumber".equals(phonenumber.get(count)))  {
+   	phonenumber.indexOf(count);
+  	System.out.println("PhoneNumber not found");
     }
   }
 
@@ -166,24 +145,21 @@ phonebookMenu();
 
 public static void findContactByFirstname() {
 
-Scanner input = new Scanner(System.in);
+   Scanner input = new Scanner(System.in);
 
-String firstName = "";
-
-System.out.println("Search the Firstname of the Contact");
-     String Name = input.nextLine();
+	System.out.println("Search the Firstname of the Contact");
+        String searchName = input.nextLine();
    
- for(int count = 0; count < FirstName.size(); count++) {
-     firstName = FirstName.get(count);
-
-  if(firstName.equals(Name))  {
-   FirstName.indexOf(firstName);
-  System.out.println(firstName + " exists");
-   }
+ 	for(int count = 0; count < firstname.size(); count++) {
+     
+  	if(searchName.equals(firstname.get(count)))  {
+   	firstname.indexOf(count);
+  	System.out.println(firstname + " exists");
+    }
  
-else if(!"firstName".equals(Name))  {
-  FirstName.indexOf(firstName);
- System.out.println("FirstName not found");
+       else if(!"searchName".equals(firstname.get(count)))  {
+  	firstname.indexOf(count);
+ 	 System.out.println("Firstname not found");
    }
   }  
    
@@ -193,22 +169,19 @@ public static void findContactByLastname() {
 
 Scanner input = new Scanner(System.in);
 
-String lastName = "";
-
 System.out.println("Search the Lastname of the Contact");
-    String lastnames = input.nextLine();
+    String lastNameSearch = input.nextLine();
 
-for(int count = 0; count < LastName.size(); count++) {
-   lastName = LastName.get(count);
-
-  if(lastName.equals(lastnames)) {
-  LastName.indexOf(lastName);
- System.out.println(lastName + " exists");
+for(int count = 0; count < lastname.size(); count++) {
+   
+  if(lastNameSearch.equals(lastname.get(count))) {
+   lastname.indexOf(count);
+ System.out.println(lastname + " exists");
   }
 
- else if (!"lastName".equals(lastnames)) {
-  LastName.indexOf(lastName);
-  System.out.println("LastName not found");
+ else if (!"lastNameSearch".equals(lastname.get(count))) {
+  lastname.indexOf(count);
+  System.out.println("Lastname not found");
   }
 }
 
