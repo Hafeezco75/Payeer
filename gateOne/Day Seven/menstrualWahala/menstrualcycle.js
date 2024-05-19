@@ -4,19 +4,43 @@ console.log("=============================================")
 
 console.log("Welcome to Your EverInteractive Menstrual Cycle App")
 
-startDate = Number(prompt()("What is the Start date of your period")
+lastDate = prompt("What is  date of your period,Enter in the format:(dd/MM/yyyy) ");
+
+startDate = prompt("What is the start date of your period,Enter in the format:(dd/MM/yyyy) ")
     
-LocalDate now = LocalDate.of(startDate)
+const startDay = new Date(startDate);
 
-LocalDate after = now.plusMonths(1)
+const lastDay = new Date(lastDate);
+    
+length = prompt("What is the average length of your menstrual cycle");
+   
+let ovulationTime = length / 2;
 
-length = parseInt(prompt())(What is the average length of your menstrual cycle"))
-  
-console.log("if your menstrual cycle is" + length)
+const ovulationLength = lastDay.getDate() + ovulationTime;
 
-console.log("Your estimated fertile window is  days)
+const fertile = ovulationLength - 6;
 
-console.log("Your estimated ovulation date is" + now)
+const safetime = lastDay.getDate() + 9;
+
+const safeLength = startDay.getDate() + 10;
+
+lastDay.setTime(ovulationLength);
+
+lastDay.setTime(fertile);
+
+lastDay.setTime(safetime);
+
+startDay.setTime(safeLength);
+
+console.log("if your menstrual cycle is " + length + "\n");
+
+console.log("Your estimated fertile window is " + lastDay.setTime(fertile) + " to " + lastDay.setTime(ovulationLength) + "\n");
+
+console.log("Your Estimated Ovulation date is " + ovulationLength + "\n");
+
+console.log("Your Safe period is " + lastDay + " to " + safetime + " and " + safeLength + " to " + startDay);
+
+console.log("\n\n");
 
 console.log("You are most likely to get pregnant if you have sex without birth control a few days before your ovulation date.")
 
