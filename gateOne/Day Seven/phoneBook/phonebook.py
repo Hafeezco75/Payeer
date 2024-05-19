@@ -1,4 +1,18 @@
-import num.py;
+prompt = """
+====================================================
+SEMICOLON MOBILE PHONEBOOK APP (VERSION 1.0)
+====================================================
+1-> Add Contact
+2-> Remove Contact
+3-> Find Contact by Phone Number
+4-> Find Contact by Firstname
+5-> Find Contact by lastname
+6-> Edit Contact
+
+===================================================
+""";
+
+print(prompt)
 
 firstname = []
 
@@ -6,30 +20,19 @@ lastname = []
 
 phonenumber = []
 
-prompt = """
-1-> Add Contact
-2-> Remove Contact
-3-> Find Contact by Phone Number
-4-> Find Contact by Firstname
-5-> Find Contact by lastname
-6-> Edit Contact
-""";
-
-print(prompt)
-
 user_Input = int(input("Enter any of the available Options to select"))
 
 match(user_Input): 
-	case 1: addContact();
+	case 1 : add_Contact()
 
-	case 2: removeContact();
+	case 2 : removeContact()
 
-	case 3: findContactByPhoneNumber();
+	case 3 : findContactByPhoneNumber()
 
-	case 4: findContactByFirstname();
+	case 4 : findContactByFirstname()
 
 
-def addContact():
+def add_Contact():
 
 	name = int(input("Enter your Firstname"))
   
@@ -44,7 +47,7 @@ def addContact():
 	phonenumber.append(contact_number)
 
 
-def removeContact():
+def remove_Contact():
 
 	phone_number = str(input("Remove PhoneNumber"))
   
@@ -59,7 +62,7 @@ def removeContact():
 		print("Contact does not exist")
 
 
-def findContactByPhoneNumber():
+def find_Contact_By_PhoneNumber():
 
 	search = str(input("Search for contact"))
 
@@ -88,11 +91,34 @@ def findContactByFirstname():
 
 		print(firstname + " exists")
 
-	elif(!"searchName".equals(firstname.get(count))):
+	else: 
+		("searchName" != (firstname.get(count)))
 
-  		firstname.indexOf(count)
+		firstname.indexOf(count)
 
- 	print("Firstname not found")
+		print("Firstname not found")
+
+
+def findContactByLastname():
+
+	lastnames = str(input("Search the Lastname of the Contact"))
+    
+	for count in lastname:
+
+		if(lastName.equals(lastnames)):
+
+			lastname.indexOf(lastName)
+ 
+	print(lastName + " exists")
+
+	if("lastName" != (lastnames)):
+
+  		LastName.indexOf(lastName);
+  
+	print("LastName not found")
+ 
+
+
 
   
 
