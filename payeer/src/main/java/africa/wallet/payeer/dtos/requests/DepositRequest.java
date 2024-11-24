@@ -11,5 +11,6 @@ public class DepositRequest {
     private Long walletId;
     private BigDecimal amount;
     private String description;
+    private String senderAccountNumber;
 
 }

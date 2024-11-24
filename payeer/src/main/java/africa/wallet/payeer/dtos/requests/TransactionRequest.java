@@ -11,8 +11,8 @@ import java.time.LocalDate;
 @Setter
 public class TransactionRequest {
     private Long id;
-    private String sender;
-    private String recipient;
+    private String senderAccountNumber;
+    private String recipientAccountNumber;
     private BigDecimal amount;
     private String description;
     private LocalDate transactionDate;

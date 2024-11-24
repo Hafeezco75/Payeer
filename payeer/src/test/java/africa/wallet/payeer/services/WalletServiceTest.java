@@ -1,5 +1,7 @@
 package africa.wallet.payeer.services;
 
+import africa.wallet.payeer.data.models.Wallet;
+import africa.wallet.payeer.dtos.requests.TransactionRequest;
 import africa.wallet.payeer.dtos.requests.WalletDepositRequest;
 import africa.wallet.payeer.dtos.response.WalletDepositResponse;
 import africa.wallet.payeer.exceptions.WalletNotFoundException;
@@ -31,5 +33,6 @@ public class WalletServiceTest {
         assertNotNull(walletDepositResponse);
         assertEquals("SUCCESS", walletDepositResponse.getStatus());
     }
+
 
 }
